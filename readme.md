@@ -101,14 +101,14 @@ Use this when working quiz and exercise problems for decimal to binary or hex co
 Section 6.2 defines TOY's main loop: PC -> IR -> execute -> PC.
 
 ```mermaid
-flowchart LR
-  pc[PC (Program Counter), 8-bit address]
-  fetch[Fetch instruction, IR = M[PC]]
-  incr[Increment PC, PC = PC + 1]
-  decode[Decode IR, opcode and operands]
-  exec[Execute, ALU or memory operation]
+graph LR;
+    pc["Program Counter (PC)"];
+    fetch["Fetch instruction into IR from memory at PC"];
+    incr["Increment PC by 1"];
+    decode["Decode instruction in IR"];
+    exec["Execute instruction (ALU or memory operation)"];
 
-  pc --> fetch --> incr --> decode --> exec --> pc
+    pc --> fetch --> incr --> decode --> exec --> pc;
 ```
 
 Key point: some instructions override PC (branches and jumps) instead of just letting it keep counting up.
