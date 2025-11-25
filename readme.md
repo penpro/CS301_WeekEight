@@ -72,6 +72,8 @@ Watch as needed to shore up weak spots, especially if base conversions or two’
 
 ## 3. Concept Flowcharts
 
+# CS-301 - Week 8 Flowcharts
+
 ## 3.1 Converting from Decimal to Base b
 
 This is the grade school style repeated divide and take remainders algorithm from Section 6.1.
@@ -81,9 +83,9 @@ flowchart TB
   start([Start with decimal n and base b])
   checkZero{Is n == 0?}
   checkZero -->|Yes| done([Representation is 0])
-  checkZero -->|No| loop[Divide n by b<br/>n = n / b (integer)<br/>remainder = n mod b]
+  checkZero -->|No| loop[Divide n by b; n = n / b (integer); remainder = n mod b]
   loop --> push[Push remainder on stack or list]
-  push --> checkDone{Is n == 0<br/>after division?}
+  push --> checkDone{Is n == 0 after division?}
   checkDone -->|No| loop
   checkDone -->|Yes| build[Read remainders in reverse order]
   build --> end([That string is n in base b])
