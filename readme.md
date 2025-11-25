@@ -362,7 +362,7 @@ From **6.2 TOY Machine**:
 
 ## 6. Repo Notes (for Future Me)
 
-Suggested structure for the Week 8 repo:
+TODO
 
 - `src/`  
   - `BinaryConverterPractice.java` - experiments with parsing, printing, and converting between bases.  
@@ -375,5 +375,3 @@ Suggested structure for the Week 8 repo:
 - `diagrams/`  
   - `decimal-to-binary-flowchart.md` (Mermaid)  
   - `toy-fetch-execute-flowchart.md`  
-
-Fill this in however you actually structure the repo, but keep the mapping clean so Future You can jump straight to “how we represented stuff in bits” and “how TOY works”.
