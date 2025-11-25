@@ -72,18 +72,18 @@ Watch as needed to shore up weak spots, especially if base conversions or two’
 
 ## 3. Concept Flowcharts
 
-### 3.1 Converting from Decimal to Base b (for example, decimal to binary or hex)
+## 3.1 Converting from Decimal to Base b
 
-This is the grade school style repeated divide and take remainders algorithm from 6.1.
+This is the grade school style repeated divide and take remainders algorithm from Section 6.1.
 
 ```mermaid
 flowchart TB
   start([Start with decimal n and base b])
   checkZero{Is n == 0?}
   checkZero -->|Yes| done([Representation is 0])
-  checkZero -->|No| loop[Divide n by b\nn = n / b (integer)\nremainder = n mod b]
-  loop --> push[Push remainder on stack/list]
-  push --> checkDone{Is n == 0\nafter division?}
+  checkZero -->|No| loop[Divide n by b<br/>n = n / b (integer)<br/>remainder = n mod b]
+  loop --> push[Push remainder on stack or list]
+  push --> checkDone{Is n == 0<br/>after division?}
   checkDone -->|No| loop
   checkDone -->|Yes| build[Read remainders in reverse order]
   build --> end([That string is n in base b])
@@ -93,17 +93,17 @@ Use this when working quiz and exercise problems for decimal to binary or hex co
 
 ---
 
-### 3.2 TOY Fetch-Increment-Execute Cycle
+## 3.2 TOY Fetch Increment Execute Cycle
 
-6.2 defines TOY’s main loop: PC -> IR -> execute -> PC.
+Section 6.2 defines TOY's main loop: PC -> IR -> execute -> PC.
 
 ```mermaid
 flowchart LR
-  pc[PC (Program Counter)\n8-bit address]
-  fetch[Fetch instruction:\nIR = M[PC]]
-  incr[Increment PC:\nPC = PC + 1]
-  decode[Decode IR:\nOpcode, d, s/t or addr]
-  exec[Execute:\nALU / Memory / PC change]
+  pc[PC (Program Counter)<br/>8-bit address]
+  fetch[Fetch instruction:<br/>IR = M[PC]]
+  incr[Increment PC:<br/>PC = PC + 1]
+  decode[Decode IR:<br/>Opcode, d, s/t or addr]
+  exec[Execute:<br/>ALU / Memory / PC change]
 
   pc --> fetch --> incr --> decode --> exec --> pc
 ```
