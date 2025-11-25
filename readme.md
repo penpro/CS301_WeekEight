@@ -340,6 +340,42 @@ You could also include:
 
 ---
 
+   ## Question 15  
+**TOY Execution Trace Table**
+
+| binary              | hex  | TOY instruction |
+|----------------------|------|-----------------|
+| 0001001000110100     | 1234 | R[2] ← R[3] + R[4] |
+| 1111111111111111     | FFFF | R[F] ← R[F] & R[F] |
+| 1111101011001110     | FACE | R[8] ← M[88] |
+| 0101011001000100     | 5644 | R[6] ← R[4] + R[4] |
+| 1000000000000001     | 8001 | if (R[C] == 0) PC ← CC |
+| 0101000000100011     | 5043 | R[0] ← R[2] + R[3] |
+| 0001110010101011     | 1CAB | (conditional branch instruction example) |
+| *(blank row)*        | 7777 | if (R[C] == 0) PC ← CC |
+
+> **Notes:**
+> - Each instruction is a 16-bit word: 4-bit opcode, 4-bit destination register, 4-bit source register, and 4-bit data/address field.
+> - The table shows both binary and hex encodings, matching the standard TOY format in *Introduction to Computer Science (Princeton)*.
+> - Common opcodes (high-level overview):
+>   - `1` – Add  
+>   - `5` – Load  
+>   - `8` – Jump / conditional branch  
+>   - `F` – Bitwise AND  
+
+When building your **execution trace**, record at each step:
+
+1. **PC** → fetches instruction from memory  
+2. **IR** → stores that instruction  
+3. Decode: determine opcode and operands  
+4. Execute: update registers or memory accordingly  
+5. Increment PC (unless modified by jump/branch)  
+
+Continue this sequence until a `7777` (halt) or conditional branch halts progression.
+
+Any three of the above, with a sentence or two each, will cover this question.
+
+
 ## 5. Practice Ideas Tied To The Reading
 
 You do not have to do all of these, but a handful will make the concepts stick.
