@@ -101,11 +101,11 @@ Section 6.2 defines TOY's main loop: PC -> IR -> execute -> PC.
 
 ```mermaid
 flowchart LR
-  pc[PC (Program Counter)<br/>8-bit address]
-  fetch[Fetch instruction:<br/>IR = M[PC]]
-  incr[Increment PC:<br/>PC = PC + 1]
-  decode[Decode IR:<br/>Opcode, d, s/t or addr]
-  exec[Execute:<br/>ALU / Memory / PC change]
+  pc[PC (Program Counter), 8-bit address]
+  fetch[Fetch instruction, IR = M[PC]]
+  incr[Increment PC, PC = PC + 1]
+  decode[Decode IR, opcode and operands]
+  exec[Execute, ALU or memory operation]
 
   pc --> fetch --> incr --> decode --> exec --> pc
 ```
