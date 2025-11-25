@@ -79,16 +79,17 @@ Watch as needed to shore up weak spots, especially if base conversions or two’
 This is the grade school style repeated divide and take remainders algorithm from Section 6.1.
 
 ```mermaid
-flowchart TB
-  start([Start with decimal n and base b])
-  checkZero{Is n == 0?}
-  checkZero -->|Yes| done([Representation is 0])
-  checkZero -->|No| loop[Divide n by b; n = n / b (integer); remainder = n mod b]
-  loop --> push[Push remainder on stack or list]
-  push --> checkDone{Is n == 0 after division?}
-  checkDone -->|No| loop
-  checkDone -->|Yes| build[Read remainders in reverse order]
-  build --> end([That string is n in base b])
+graph TB;
+    start["Start with decimal n and base b"];
+    checkZero{"Is n == 0?"};
+    start --> checkZero;
+    checkZero -->|Yes| done["Representation is 0"];
+    checkZero -->|No| loop["Divide n by b; n = n / b; remainder = n mod b"];
+    loop --> push["Push remainder on stack or list"];
+    push --> checkDone{"Is n == 0 after division?"};
+    checkDone -->|No| loop;
+    checkDone -->|Yes| build["Read remainders in reverse order"];
+    build --> done;
 ```
 
 Use this when working quiz and exercise problems for decimal to binary or hex conversions.
